@@ -27,8 +27,15 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.1'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile 'org.reflections:reflections:0.9.11'
+
+}
+
+bootJar {
+	archiveName = 'cqrs.jar'
 }
 
 test {
+	exclude '**/*'
 	useJUnitPlatform()
 }
